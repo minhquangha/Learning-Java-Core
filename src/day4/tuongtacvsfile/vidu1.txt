@@ -1,0 +1,21 @@
+// thay đổi tên rename()
+//move() di chuyển file (nhận vào path) (di chuyển cả bên trong tập tin)
+//copy() không copy được bên trong
+
+public static void copyAll(File f1, File f2) {
+		try {
+			// Copy ban than no
+			Files.copy(f1.toPath(), f2.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(f1.isDirectory()){
+			// Copy cac tap tin va thu muc con
+			File[] mangCon = f1.listFiles();
+			for (File file : mangCon) {
+				File file_new = new File(f2.getAbsoluteFile()+"/"+file.getName());
+				copyAll(file, file_new);
+			}
+		}
+	}
