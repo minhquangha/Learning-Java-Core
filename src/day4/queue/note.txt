@@ -1,0 +1,4 @@
+add và offer đều là thêm phần tử nhưng nếu không thành công thì add sẽ ném ra một ngoại lệ còn offer thì trả về false
+element trả veef phần tđầu tiên của hàng đợi giống với peek element ném một ngoại lệ nếu trống còn peek thì trả về null
+remove = poll. Neeus hàng đợi trống thì remove ném ngoại lệ, poll thì trả null
+
